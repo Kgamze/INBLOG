@@ -7,7 +7,6 @@ Project includes(step by step) following Java technologies :
 - SPRING MVC
 - SPRING SECURITY
 - SPRING DATA JPA
-- HIBERNATE 
-- JSP 
-- APACHE TILES OR THYMELEAF
+- JPA AND HIBERNATE 
+- JSP AND APACHE TILES
 - BOOTSTRAP
