@@ -1,4 +1,4 @@
-package com.springapp.mvc;
+package com.mesutdogan.inblog;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,13 +17,12 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
+@ContextConfiguration("file:../../../../../main/webapp/WEB-INF/dispatcher-servlet.xml")
 public class AppTests {
-    private MockMvc mockMvc;
-
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     protected WebApplicationContext wac;
+    private MockMvc mockMvc;
 
     @Before
     public void setup() {

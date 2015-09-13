@@ -8,5 +8,5 @@ Project includes(step by step) following Java technologies :
 - SPRING SECURITY
 - SPRING DATA JPA
 - JPA AND HIBERNATE 
-- JSP AND APACHE TILES
+- BOTH JSP(FOR USER) AND THMYLEAF(FOR ADMIN) IN VIEW LAYER .
 - BOOTSTRAP
