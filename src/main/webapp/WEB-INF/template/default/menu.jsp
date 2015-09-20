@@ -8,7 +8,7 @@
 
 <!-- Fixed navbar -->
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #f5f5f5;">
+<nav class="navbar navbar-inverse   x navbar-fixed-top" style="background-color: #f5f5f5;">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"

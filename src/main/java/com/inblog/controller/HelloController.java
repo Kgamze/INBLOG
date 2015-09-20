@@ -1,4 +1,4 @@
-package com.mesutdogan.inblog;
+package com.inblog.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

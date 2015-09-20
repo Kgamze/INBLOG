@@ -4,29 +4,25 @@
 
 <tiles:insertDefinition name="defaultTemplate">
     <tiles:putAttribute name="body">
+        <tiles:putAttribute name="active_page" value="home"></tiles:putAttribute>
 
+        <div class="row" style="background-color: whitesmoke;">
 
-        <div class="row">
-
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2 ">
                 <br>
                 <br>
                 <br>
-                <spring:message code="home.info"></spring:message>
-                <span class="label label-default">Toplam 157 Blog</span>
+                Active page : <c:out value="${active_page}"></c:out>
+                <span class="label label-info">Toplam 157 Blog</span>
                 <span class="label label-success">Son Guncelleme : 22.34</span>
-                <br><br>
+                <spring:message code="home.info"></spring:message>
+                <hr>
+
                 <ul class="list-group">
                     <c:forEach var="i" begin="0" end="10">
                         <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" data-src="holder.js/64x64" alt="64x64"
-                                         src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSxW0kkwyfUjXIxl6eB94306wN8lt5I1xY2ZEOubF6A6aUspT3OzqmeJw"
-                                         data-holder-rendered="true" style="width: 64px; height: 64px;">
-                                </a>
-                            </div>
-                            <div class="media-body">
+
+                        <div class="media-body">
                                 <h4 class="media-heading">Media heading</h4>
                                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                                 sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra

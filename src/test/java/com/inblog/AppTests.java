@@ -1,4 +1,4 @@
-package com.mesutdogan.inblog;
+package com.inblog;
 
 import org.junit.Before;
 import org.junit.Test;
