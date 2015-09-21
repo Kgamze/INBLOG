@@ -13,13 +13,29 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
+
     private String fullName;
+
     private String mail;
+
     @OneToMany(mappedBy = "user")
     private List<Blog> blogs;
+
     @ManyToMany
     private List<Role> roles;
+
     private String password;
+
+
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public List<Blog> getBlogs() {
         return blogs;

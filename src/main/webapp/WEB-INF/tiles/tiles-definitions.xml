@@ -4,10 +4,23 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-    <definition name="defaultTemplate" template="/WEB-INF/template/default/template.jsp">
-        <put-attribute name="header" value="/WEB-INF/template/default/header.jsp"/>
-        <put-attribute name="menu" value="/WEB-INF/template/default/menu.jsp"/>
+    <definition name="common" template="/WEB-INF/template/default/template.jsp">
         <put-attribute name="footer" value="/WEB-INF/template/default/footer.jsp"/>
     </definition>
 
+    <definition name="index" extends="common">
+        <put-attribute name="current" value="home"/>
+    </definition>
+
+    <definition name="developer" extends="common">
+        <put-attribute name="current" value="developer"/>
+    </definition>
+
+    <definition name="about" extends="common">
+        <put-attribute name="current" value="about"/>
+    </definition>
+
+    <definition name="user" extends="common">
+        <put-attribute name="current" value="userpage"/>
+    </definition>
 </tiles-definitions>

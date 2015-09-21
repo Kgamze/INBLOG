@@ -1,22 +1,24 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
 
-<tiles:insertDefinition name="defaultTemplate">
+<tiles:insertDefinition name="index">
     <tiles:putAttribute name="body">
-        <tiles:putAttribute name="active_page" value="home"></tiles:putAttribute>
-
-        <div class="row" style="background-color: whitesmoke;">
+        <div class="row">
 
             <div class="col-md-8 col-md-offset-2 ">
                 <br>
                 <br>
                 <br>
-                Active page : <c:out value="${active_page}"></c:out>
+                <br>
+
+
                 <span class="label label-info">Toplam 157 Blog</span>
                 <span class="label label-success">Son Guncelleme : 22.34</span>
                 <spring:message code="home.info"></spring:message>
                 <hr>
+
 
                 <ul class="list-group">
                     <c:forEach var="i" begin="0" end="10">
@@ -40,8 +42,5 @@
                 </ul>
             </div>
         </div>
-        </div>
-
-
     </tiles:putAttribute>
 </tiles:insertDefinition>

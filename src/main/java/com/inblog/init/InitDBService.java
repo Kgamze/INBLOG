@@ -50,6 +50,7 @@ public class InitDBService {
         roleUser.setName("ROLE_USER");
         userDogan.setFullName("Dogan");
         userMesut.setFullName("Mesut");
+        admin.setFullName("Admin");
         Item item1 = new Item();
         item1.setBlog(blog);
         item1.setDescription("Item description");
