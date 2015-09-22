@@ -13,7 +13,6 @@ public class HelloController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model, Locale locale) {
 		model.addAttribute("message", "Hello asdas!");
-		System.out.println("locale " + locale);
 		return "index";
 	}
 }

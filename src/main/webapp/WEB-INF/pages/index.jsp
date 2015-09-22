@@ -3,17 +3,11 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
 
-<tiles:insertDefinition name="index">
+<tiles:insertDefinition name="default">
     <tiles:putAttribute name="body">
         <div class="row">
 
             <div class="col-md-8 col-md-offset-2 ">
-                <br>
-                <br>
-                <br>
-                <br>
-
-
                 <span class="label label-info">Toplam 157 Blog</span>
                 <span class="label label-success">Son Guncelleme : 22.34</span>
                 <spring:message code="home.info"></spring:message>

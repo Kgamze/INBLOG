@@ -13,7 +13,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -33,9 +32,9 @@
     </title>
 </head>
 <body>
-<tilesx:useAttribute name="current"/>
 
 <nav class="navbar navbar-fixed-top" style="background-color: #f5f5f5;">
+
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -49,18 +48,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="<c:if test="${current}=='home' "><c:out value="active"></c:out></c:if>"><a href="#">Home</a>
+                <li class=""><a href="#">Home</a>
                 </li>
-                <li class="<c:if test="${current}=='about' "><c:out value="active"></c:out></c:if>"><a href="#about">About</a>
+                <li class=""><a href="${pageContext.request.contextPath}/InBlog/user/signup">Register</a>
                 </li>
-                <li class="<c:if test="${current}=='contact' "><c:out value="active"></c:out></c:if>"><a
-                        href="#contact">Contact</a></li>
+                <li class=""><a href="#contact">Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">
-                            <spring:message code="menu.top.weekly"></spring:message></a></li>
+                        <li><a href="#"><spring:message code="menu.top.weekly"></spring:message></a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                     </ul>
@@ -69,11 +66,13 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="?locale=tr">
                     <img src="http://icons.iconarchive.com/icons/custom-icon-design/flat-europe-flag/32/Turkey-icon.png">
-                </a></li>
+                </a>
+                </li>
                 <li><a href="?locale=en">
                     <img src="http://icons.iconarchive.com/icons/custom-icon-design/flat-europe-flag/32/United-Kingdom-icon.png">
-                </a></li>
-                <li class="active">
+                </a>
+                </li>
+                <li class="">
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
                             <input type="text" placeholder="<spring:message code="login.email"></spring:message>"
@@ -91,8 +90,14 @@
         <!--/.nav-collapse -->
     </div>
 </nav>
-<tiles:insertAttribute name="body">
-</tiles:insertAttribute>
-<tiles:insertAttribute name="footer"></tiles:insertAttribute>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<tiles:insertAttribute name="body"/>
+<tiles:insertAttribute name="footer"/>
 </body>
 </html>
+

@@ -13,7 +13,7 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/InBlog/*</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -22,6 +22,7 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
     <filter>
         <filter-name>openEntityManagerInViewFilter</filter-name>
         <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
