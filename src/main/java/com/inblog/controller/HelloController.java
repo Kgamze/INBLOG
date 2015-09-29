@@ -1,5 +1,7 @@
 package com.inblog.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,9 +12,13 @@ import java.util.Locale;
 @Controller
 @RequestMapping("/")
 public class HelloController {
-	@RequestMapping(method = RequestMethod.GET)
+
+
+	private static Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model, Locale locale) {
-		model.addAttribute("message", "Hello asdas!");
+		LOGGER.debug("selam");
 		return "index";
 	}
 }

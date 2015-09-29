@@ -63,8 +63,14 @@ public class InitDBService {
         roleUser.setName("ROLE_USER");
 
         userDogan.setFullName("Dogan");
+        userDogan.setUserName("dogan");
+        userDogan.setPassword("1");
         userMesut.setFullName("Mesut");
+        userMesut.setUserName("mesut");
+        userMesut.setPassword("1");
         admin.setFullName("Admin");
+        admin.setUserName("admin");
+        admin.setPassword("1");
 
         Item item1 = new Item();
         item1.setBlog(blog);
