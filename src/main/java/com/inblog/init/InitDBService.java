@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Mesut Doğan <mesut.dogan@indbilisim.com.tr>
@@ -72,6 +73,20 @@ public class InitDBService {
         admin.setUserName("admin");
         admin.setPassword("1");
 
+        List<Role> roleList = new ArrayList<Role>();
+        List<User> userList = new ArrayList<User>();
+
+        roleList.add(roleAdmin);
+        roleList.add(roleUser);
+
+        userList.add(userDogan);
+
+        userDogan.setRoles(roleList);
+
+        roleAdmin.setUsers(userList);
+        roleUser.setUsers(userList);
+
+
         Item item1 = new Item();
         item1.setBlog(blog);
         item1.setDescription("Item description");
@@ -82,21 +97,15 @@ public class InitDBService {
         itemList.add(item1);
         blog.setItems(itemList);
 
-
         blogList.add(blog);
         blogList.add(blog2);
         blog.setUser(userDogan);
         blog2.setUser(userDogan);
         userDogan.setBlogs(blogList);
 
-        roleRepository.save(roleAdmin);
         roleRepository.save(roleUser);
+        roleRepository.save(roleAdmin);
         userRepository.save(userDogan);
-        userRepository.save(userMesut);
-        userRepository.save(admin);
-        blogRepository.save(blog);
-        blogRepository.save(blog2);
-        itemRepository.save(item1);
 
 
     }
