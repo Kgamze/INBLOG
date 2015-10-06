@@ -63,14 +63,11 @@ public class InitDBService {
         roleAdmin.setName("ROLE_ADMIN");
         roleUser.setName("ROLE_USER");
 
-        userDogan.setFullName("Dogan");
-        userDogan.setUserName("dogan");
+        userDogan.setFirstName("Doğan");
         userDogan.setPassword("1");
-        userMesut.setFullName("Mesut");
-        userMesut.setUserName("mesut");
+        userMesut.setFirstName("Mesut");
         userMesut.setPassword("1");
-        admin.setFullName("Admin");
-        admin.setUserName("admin");
+        admin.setFirstName("Admin");
         admin.setPassword("1");
 
         List<Role> roleList = new ArrayList<Role>();

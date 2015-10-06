@@ -29,12 +29,15 @@ public class InBlogUserDetails implements UserDetails {
 
     private final String username;
 
-    private final String fullName;
+    private final String firstname;
 
+    private final String lastname;
 
     public InBlogUserDetails(User user) {
-        this.username = user.getUserName();
-        this.fullName = user.getFullName();
+
+        this.username = user.getEmail();
+        this.firstname = user.getFirstName();
+        this.lastname = user.getLastName();
         this.password = user.getPassword();
         this.credentialsNonExpired = true;
         this.accountNonExpired = true;
@@ -43,8 +46,6 @@ public class InBlogUserDetails implements UserDetails {
         this.enabled = true;
         this.id = user.getId();
 
-        System.out.println("---------------->user " + this.username);
-        System.out.println("---------------->password " + this.password);
         for (Role role : user.getRoles()) {
             authorities.add(new SimpleGrantedAuthority(role.getName()));
             System.out.println("---------------->Roles: " + role.getName());

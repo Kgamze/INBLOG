@@ -24,7 +24,10 @@
                 <sec:authorize access="isAnonymous()">
                     <li class=""><a href="/user/signup">Register</a></li>
                 </sec:authorize>
-                <li><a href="/user/view">Users</a></li>
+                <sec:authorize access="isAuthenticated()">
+                    <li><a href="/user/view">My Blogs</a></li>
+                </sec:authorize>
+
 
 
             </ul>

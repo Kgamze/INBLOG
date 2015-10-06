@@ -15,10 +15,6 @@ public class User implements Serializable {
     @GeneratedValue
     private Long id;
 
-    private String fullName;
-
-    private String mail;
-
     @OneToMany(mappedBy = "user")
     private List<Blog> blogs;
 
@@ -27,14 +23,38 @@ public class User implements Serializable {
 
     private String password;
 
-
-    private String userName;
-
     private boolean accountNonExpired = true;
 
     private boolean accountNonLocked = true;
 
     private boolean credentialsNonExpired = true;
+
+    private String firstName;
+
+    private String lastName;
+
+    private String email;
+
+    public User(String roleName) {
+
+        this.getRoles().add(new Role(roleName));
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
     public boolean isAccountNonExpired() {
         return accountNonExpired;
@@ -58,14 +78,6 @@ public class User implements Serializable {
 
     public void setCredentialsNonExpired(boolean credentialsNonExpired) {
         this.credentialsNonExpired = credentialsNonExpired;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public List<Blog> getBlogs() {
@@ -92,20 +104,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setLastName(String firstName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {

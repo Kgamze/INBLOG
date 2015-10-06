@@ -20,9 +20,9 @@ public class AuthenticationService implements UserDetailsService {
     private UserService userService;
 
     @Override
-    public InBlogUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public InBlogUserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        User user = userService.findByUserName(username);
+        User user = userService.findByEmail(email);
 
         if (user == null) {
             throw new UsernameNotFoundException("Username is not found");

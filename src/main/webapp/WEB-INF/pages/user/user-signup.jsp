@@ -12,11 +12,20 @@
                 <form:form class="form-horizontal" method="post" modelAttribute="user">
 
                     <div class="form-group">
-                        <label for="inputFullName" class="col-sm-2 control-label">Fullname</label>
+                        <label for="inputFullName" class="col-sm-2 control-label">Firstname</label>
 
                         <div class="col-sm-10">
-                            <form:input path="fullName" class="form-control" id="inputFullName"
-                                        placeholder="Full Name"/>
+                            <form:input path="firstName" class="form-control" id="inputFullName"
+                                        placeholder="First Name"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputFullName" class="col-sm-2 control-label">Lastname</label>
+
+                        <div class="col-sm-10">
+                            <form:input path="lastName" class="form-control" id="inputFullName"
+                                        placeholder="Last Name"/>
                         </div>
                     </div>
 
@@ -24,7 +33,7 @@
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                         <div class="col-sm-10">
-                            <form:input path="mail" class="form-control" id="inputEmail" placeholder="email@asdasda"/>
+                            <form:input path="email" class="form-control" id="inputEmail" placeholder="email@asdasda"/>
                         </div>
                     </div>
 
