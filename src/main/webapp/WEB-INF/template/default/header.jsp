@@ -4,6 +4,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<sec:authorize access="isAuthenticated()">
+    <sec:authentication property="principal.firstname" var="firstName" scope="session"/>
+    <sec:authentication property="principal.lastname" var="lastName" scope="session"/>
+    <sec:authentication property="principal.id" var="id" scope="session"/>
+</sec:authorize>
+
 <nav class="navbar navbar-fixed-top" style="background-color: #f5f5f5;">
 
     <div class="container">
@@ -22,10 +28,14 @@
                 <li class=""><a href="/">Home</a>
                 </li>
                 <sec:authorize access="isAnonymous()">
-                    <li class=""><a href="/user/signup">Register</a></li>
+                    <li class=""><a href="/user/signup">Sign Up</a></li>
+                    <li class=""><a href="/login">Sign In</a></li>
                 </sec:authorize>
-                <sec:authorize access="isAuthenticated()">
-                    <li><a href="/user/view">My Blogs</a></li>
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                    <li><a href="/blog/search">Blogs</a></li>
+                </sec:authorize>
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                    <li><a href="/user/view">Users</a></li>
                 </sec:authorize>
 
 
@@ -51,10 +61,10 @@
                 <sec:authorize access="isAuthenticated()">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">My Account <span class="caret"></span></a>
+                           aria-expanded="false">Hosgeldin, ${firstName} ${lastName} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="#"><spring:message code="menu.top.weekly"></spring:message></a></li>
+                            <li><a href="#"><spring:message text="Yardim"></spring:message></a></li>
                             <li><a href="#"><spring:message text="Ayarlar"></spring:message></a></li>
                             <li><a href="/logout"><spring:message code="login.logout"></spring:message></a></li>
                         </ul>

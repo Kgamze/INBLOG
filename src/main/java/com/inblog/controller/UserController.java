@@ -18,6 +18,7 @@ import java.util.List;
 /**
  * @author Mesut Dogan <mesut.dogan@indbilisim.com.tr> on 9/21/15.
  */
+
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
@@ -32,8 +33,11 @@ public class UserController {
 
     private static final String PAGE_SIGNUP = BASE_PATH + "signup";
 
-    private static final String PAGE_REDIRECT_DEFAULT = "redirect:view";
+    private static final String PAGE_DEFAULT = "redirect:/";
 
+    private static final String REDIRECT_SIGNUP_OK = "redirect:/?signup=success";
+
+    private static final String REDIRECT_SIGNUP_FAIL = "redirect:/?signup=fail";
 
     @Autowired
     UserService userService;
@@ -67,9 +71,12 @@ public class UserController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String postSignUp(@ModelAttribute("user") User user, BindingResult result) {
         userService.save(user);
-        if (result.hasErrors())
+        if (result.hasErrors()) {
             LOGGER.info("Kullanici kaydinda hata olustu");
-        else LOGGER.info("Kullanici kaydi basarili");
-        return PAGE_REDIRECT_DEFAULT;
+            return REDIRECT_SIGNUP_FAIL;
+        }
+        LOGGER.info("Kullanici kaydi basarili");
+        return REDIRECT_SIGNUP_OK;
     }
+
 }

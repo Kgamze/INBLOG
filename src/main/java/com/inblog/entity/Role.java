@@ -19,6 +19,9 @@ public class Role {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     List<User> users;
 
+    public Role() {
+
+    }
     public Role(String roleName) {
         this.name = roleName;
     }

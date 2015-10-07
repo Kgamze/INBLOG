@@ -2,12 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 
 <tiles:insertDefinition name="default">
     <tiles:putAttribute name="body">
-        <div class="row">
-
-            <div class="col-md-8 col-md-offset-2 ">
                 <span class="label label-info">Toplam 157 Blog</span>
                 <span class="label label-success">Son Guncelleme : 22.34</span>
                 <spring:message code="home.info"></spring:message>
@@ -22,7 +21,7 @@
                                 <h4 class="media-heading">Media heading</h4>
                                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                                 sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                                turpis.
+                            turpis.------>${id}
                             </div>
                             <div class="media-right">
                                 <a href="#">
@@ -34,7 +33,5 @@
                         </div>
                     </c:forEach>
                 </ul>
-            </div>
-        </div>
     </tiles:putAttribute>
 </tiles:insertDefinition>

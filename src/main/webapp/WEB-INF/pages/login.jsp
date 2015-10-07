@@ -1,14 +1,12 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <tiles:insertDefinition name="default">
     <tiles:putAttribute name="body">
 
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4   ">
-                    <div class="alert alert-danger" role="alert">
-                        <span class="glyphicon-ok"></span> <spring:message code="custom.message.restricted"/>
-                    </div>
 
                     <form class="form-signin" name="f" method="post" action="/login">
                         <h2 class="form-signin-heading">

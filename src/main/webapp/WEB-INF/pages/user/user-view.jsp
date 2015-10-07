@@ -8,7 +8,7 @@
 
         <div class="row">
             <div class="col-md-6 col-md-offset-3 ">
-                <table class="table table-bordered">
+                <table class="table table-stripped">
                     <thead>
                     <tr>
                         <th>#ID</th>
@@ -24,10 +24,10 @@
 
                         <tr>
                             <td><c:out value="${item.id}"></c:out></td>
-                            <td><c:out value="${item.userName}"></c:out></td>
-                            <td><c:out value="${item.fullName}"></c:out></td>
-                            <td><c:out value="${item.mail}"></c:out></td>
-                            <td>-</td>
+                            <td><c:out value="${item.email}"></c:out></td>
+                            <td><c:out value="${item.firstName}"></c:out></td>
+                            <td><c:out value="${item.lastName}"></c:out></td>
+                            <td><c:out value="${item.blogs.size()}"></c:out></td>
                             <td>
                                 <a href="<c:url value="edit/${item.id}"></c:url>"><span
                                         class="glyphicon glyphicon-pencil"></span></a>

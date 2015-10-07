@@ -39,7 +39,12 @@
 <br>
 <br>
 <br>
-<tiles:insertAttribute name="body"/>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 ">
+        <tiles:insertAttribute name="body"/>
+    </div>
+</div>
 <tiles:insertAttribute name="footer"/>
 </body>
 </html>

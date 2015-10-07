@@ -42,8 +42,8 @@ public class InitDBService {
 
         ArrayList<Blog> blogList = new ArrayList<Blog>();
         ArrayList<Item> itemList = new ArrayList<Item>();
-        Role roleUser = new Role();
-        Role roleAdmin = new Role();
+        Role roleUser = new Role("ROLE_USER");
+        Role roleAdmin = new Role("ROLE_ADMIN");
 
         User userDogan = new User();
         User userMesut = new User();
@@ -99,6 +99,9 @@ public class InitDBService {
         blog.setUser(userDogan);
         blog2.setUser(userDogan);
         userDogan.setBlogs(blogList);
+
+        userDogan.setEmail("d");
+        userMesut.setEmail("m");
 
         roleRepository.save(roleUser);
         roleRepository.save(roleAdmin);

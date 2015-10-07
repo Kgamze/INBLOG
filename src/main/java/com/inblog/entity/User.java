@@ -35,11 +35,6 @@ public class User implements Serializable {
 
     private String email;
 
-    public User(String roleName) {
-
-        this.getRoles().add(new Role(roleName));
-    }
-
     public String getEmail() {
         return email;
     }
