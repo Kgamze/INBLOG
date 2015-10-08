@@ -39,9 +39,6 @@
 <br>
 <br>
 <br>
-
-<div class="row">
-    <div class="col-md-8 col-md-offset-2 ">
         <tiles:insertAttribute name="body"/>
     </div>
 </div>

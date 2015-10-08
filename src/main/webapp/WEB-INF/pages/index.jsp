@@ -7,16 +7,15 @@
 
 <tiles:insertDefinition name="default">
     <tiles:putAttribute name="body">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 ">
                 <span class="label label-info">Toplam 157 Blog</span>
                 <span class="label label-success">Son Guncelleme : 22.34</span>
                 <spring:message code="home.info"></spring:message>
                 <hr>
-
-
                 <ul class="list-group">
                     <c:forEach var="i" begin="0" end="10">
                         <div class="media">
-
                         <div class="media-body">
                                 <h4 class="media-heading">Media heading</h4>
                                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
@@ -33,5 +32,7 @@
                         </div>
                     </c:forEach>
                 </ul>
+            </div>
+        </div>
     </tiles:putAttribute>
 </tiles:insertDefinition>
