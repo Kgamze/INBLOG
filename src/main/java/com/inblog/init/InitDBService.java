@@ -51,7 +51,7 @@ public class InitDBService {
 
         Blog blog = new Blog();
         blog.setName("jiripankas");
-        blog.setUrl("http://feeds.feedburner.com/javavids?format=xml");
+        blog.setUrl("http://feeds.feedburner.com/vogella/RZia");
         blog.setUser(admin);
 
         Blog blog2 = new Blog();
@@ -70,8 +70,8 @@ public class InitDBService {
         admin.setFirstName("Admin");
         admin.setPassword("1");
 
-        List<Role> roleList = new ArrayList<Role>();
-        List<User> userList = new ArrayList<User>();
+        List<Role> roleList = new ArrayList();
+        List<User> userList = new ArrayList();
 
         roleList.add(roleAdmin);
         roleList.add(roleUser);
@@ -106,6 +106,8 @@ public class InitDBService {
         roleRepository.save(roleUser);
         roleRepository.save(roleAdmin);
         userRepository.save(userDogan);
+        blogRepository.save(blog);
+        itemRepository.save(item1);
 
 
     }

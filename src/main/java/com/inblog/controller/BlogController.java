@@ -7,8 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Mesut Dogan <mesut.dogan@indbilisim.com.tr> on 10/7/15.
@@ -28,13 +32,18 @@ public class BlogController {
     private BlogService blogService;
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String postAdd(Model model) {
-        return PAGE_BLOGS;
+    public String postAdd(@ModelAttribute("user") Blog blog) {
+
+        blogService.save(blog);
+        return "redirect:/blog/search";
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String getSearch(Model model) {
+        List<Blog> list = new ArrayList<Blog>();
+        list = blogService.findAll();
         model.addAttribute("blog", new Blog());
+        model.addAttribute("blogs", list);
         return PAGE_BLOGS;
     }
 }

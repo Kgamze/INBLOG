@@ -37,9 +37,6 @@
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
                     <li><a href="/user/view">Users</a></li>
                 </sec:authorize>
-
-
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="?locale=tr">

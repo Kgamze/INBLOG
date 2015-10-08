@@ -14,6 +14,7 @@ public class Item {
     private Long id;
 
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String description;
     @Column(name = "publish_date")
     private String publishDate;

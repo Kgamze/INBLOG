@@ -18,8 +18,7 @@
 
     <beans:bean id="authenticationService" class="com.inblog.service.AuthenticationService"/>
     <authentication-manager>
-        <authentication-provider
-                user-service-ref="authenticationService">
+        <authentication-provider user-service-ref="authenticationService">
         </authentication-provider>
     </authentication-manager>
 </beans:beans>
