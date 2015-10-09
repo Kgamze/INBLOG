@@ -9,4 +9,5 @@ Project includes(step by step) following Java technologies :
 - SPRING DATA JPA
 - JPA AND HIBERNATE 
 - BOTH JSP(FOR USER) AND THMYLEAF(FOR ADMIN) IN VIEW LAYER .
+- JAVA MAIL API
 - BOOTSTRAP
