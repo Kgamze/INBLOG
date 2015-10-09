@@ -18,12 +18,20 @@ public class Blog {
 
     private String url;
 
+    private String imageUrl;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
     @OneToMany(mappedBy = "blog", cascade = CascadeType.REMOVE)
     private List<Item> items;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public List<Item> getItems() {
         return items;

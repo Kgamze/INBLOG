@@ -10,7 +10,7 @@
     <sec:authentication property="principal.id" var="id" scope="session"/>
 </sec:authorize>
 
-<nav class="navbar navbar-fixed-top" style="background-color: #f5f5f5;">
+<nav class="navbar  navbar-custom navbar-fixed-top" style="background-color: #f5f5f5;">
 
     <div class="container">
         <div class="navbar-header">

@@ -22,6 +22,7 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "blog_id")
     private Blog blog;
+    private String imageUrl;
 
     public Blog getBlog() {
         return blog;
@@ -69,5 +70,13 @@ public class Item {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

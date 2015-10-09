@@ -19,7 +19,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://bootswatch.com/cerulean/bootstrap.min.css">
     <style>
         .navbar {
 
@@ -39,9 +39,14 @@
 <br>
 <br>
 <br>
-        <tiles:insertAttribute name="body"/>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 ">
+        <h6 class="text-danger">Toplam response suresi : ${responseTime} miliseonds..</h6>
     </div>
 </div>
+<tiles:insertAttribute name="body"/>
+
 <tiles:insertAttribute name="footer"/>
 </body>
 </html>

@@ -30,21 +30,33 @@ public class BlogService {
     RssService rssService;
 
     public void save(Blog blog) {
-        List<Item> itemList = rssService.getItems(blog.getUrl());
+        List<Item> itemList = rssService.getItems(blog);
         blog.setItems(itemList);
-        blogRepository.save(blog);
         for (Item item : itemList) {
             item.setBlog(blog);
         }
+        blogRepository.save(blog);
         itemRepository.save(itemList);
+
     }
 
     public List<Blog> findAll() {
         return blogRepository.findAll();
     }
 
-    public void saveItems(Blog blog) {
+    public void updateRssItems() {
 
+        List<Blog> blogList = blogRepository.findAll();
+        List<Item> itemList;
+        for (Blog blog : blogList) {
+            itemList = rssService.getItems(blog);
+            blog.setItems(itemList);
+            for (Item item : itemList) {
+                item.setBlog(blog);
+            }
+            itemRepository.save(itemList);
+        }
     }
+
 
 }

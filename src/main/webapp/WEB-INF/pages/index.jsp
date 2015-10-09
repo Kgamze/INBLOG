@@ -11,27 +11,61 @@
             <div class="col-md-8 col-md-offset-2 ">
                 <span class="label label-info">Toplam 157 Blog</span>
                 <span class="label label-success">Son Guncelleme : 22.34</span>
-                <spring:message code="home.info"></spring:message>
+
                 <hr>
-                <ul class="list-group">
-                    <c:forEach var="i" begin="0" end="10">
-                        <div class="media">
-                        <div class="media-body">
-                                <h4 class="media-heading">Media heading</h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                            turpis.------>${id}
-                            </div>
-                            <div class="media-right">
-                                <a href="#">
-                                    <img class="media-object" data-src="holder.js/64x64" alt="64x64"
-                                         src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGZkYjkyZTY4YyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZmRiOTJlNjhjIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40NzY1NjI1IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg=="
-                                         data-holder-rendered="true" style="width: 64px; height: 64px;">
-                                </a>
+
+                <div class="twt-wrapper">
+                    <div class="panel  panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        <div class="panel-body">
+
+                            <ul class="media-list">
+                                <c:forEach items="${itemList}" var="item">
+
+                                    <li class="media" style="border-bottom: 15px saddlebrown">
+                                        <a href="#" class="pull-left">
+                                            <img src="${item.imageUrl}" alt="" class=" img-rounded"
+                                                 style="width: 80px;">
+                                        </a>
+
+                                        <div class="media-body ">
+                                                <span class="text-muted pull-right">
+                                                    <small class="text-muted">${item.publishDate}
+                                                        <br>
+
+                                                        <div style="margin-left:70%; ">
+                                                            <h4><a id="likeBtn${item.id}" class="likeBtn">
+                                                                <span class="glyphicon glyphicon-thumbs-up "
+                                                                      style="color:green;" aria-hidden="true"></span>
+                                                            </a>
+                                                                <span class="glyphicon glyphicon-thumbs-down"
+                                                                      aria-hidden="true"></span>
+                                                                <br>
+                                                                <span class="glyphicon-class ">+7</span>
+                                                                <span class="glyphicon-class">-1</span>
+                                                            </h4>
+                                                        </div>
+
+                                                    </small>
+                                                </span>
+                                            <strong class="text-success">${item.title}</strong>
+                                            <span class="label label-default">${item.blog.name}</span>
+
+                                            <p>
+                                                    ${item.description}
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <hr>
+                                </c:forEach>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <hr>
                             </div>
                         </div>
-                    </c:forEach>
-                </ul>
+                </div>
             </div>
         </div>
     </tiles:putAttribute>

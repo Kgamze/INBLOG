@@ -1,11 +1,11 @@
 package com.inblog.rss;
 
+import com.inblog.entity.Blog;
 import com.inblog.entity.Item;
 import com.inblog.service.RssService;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
 import java.util.List;
 
 /**
@@ -19,7 +19,7 @@ public class RssServiceTest {
     @Test
     public void getItems() {
         List<Item> itemList;
-        itemList = rssService.getItems(new File("/home/dgnmst/git-intellij/INBLOG/src/test/java/com/inblog/rss/vogella.xml"));
-        Assert.assertTrue(itemList.size() > 0);
+        itemList = rssService.getItems(new Blog());
+        Assert.assertTrue(itemList.size() == 0);
     }
 }
